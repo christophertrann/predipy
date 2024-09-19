@@ -1,0 +1,113 @@
+    1. Results.csv
+
+raceId : Identifiant de la course.
+driverId : Identifiant du pilote.
+constructorId : Identifiant de l’équipe.
+grid : Position de départ.
+positionOrder : Position finale dans la course (cible de prédiction).
+points : Points obtenus par le pilote.
+fastestLapTime : Temps du meilleur tour.
+fastestLapSpeed : Vitesse du meilleur tour.
+
+
+    2. Qualifying.csv
+
+raceId : Identifiant de la course.
+driverId : Identifiant du pilote.
+constructorId : Identifiant de l’équipe.
+position : Position obtenue lors des qualifications.
+q1 : Temps de la première session de qualification.
+q2 : Temps de la deuxième session de qualification.
+q3 : Temps de la troisième session de qualification.
+
+
+    3. Races.csv
+
+raceId : Identifiant de la course.
+circuitId : Identifiant du circuit.
+year : Année de la course.
+round : Numéro du tour.
+date : Date de la course.
+time : Heure de la course.
+
+
+    4. Driver_Standings.csv
+
+raceId : Identifiant de la course.
+driverId : Identifiant du pilote.
+points : Points du pilote au classement.
+position : Position du pilote au classement.
+
+
+    5. Constructor_Standings.csv
+
+raceId : Identifiant de la course.
+constructorId : Identifiant de l’équipe.
+points : Points de l’équipe au classement.
+position : Position de l’équipe au classement.
+
+
+    6. Weather.parquet
+
+apply_time_rl : Timestamp pour synchroniser les données météo avec les événements de course.
+climate_temperature : Température ambiante.
+climate_pressure : Pression atmosphérique.
+gfs_wind_speed : Vitesse du vent.
+gfs_precipitations : Précipitations.
+gfs_total_clouds_cover_high, gfs_total_clouds_cover_low, gfs_total_clouds_cover_middle : Couverture nuageuse à différentes altitudes.
+
+
+____________________________________________________________________________________________________________________________________________________
+
+
+    1. Results.csv
+
+raceId : Identifiant de la course, essentiel pour faire correspondre les résultats avec les autres bases de données.
+driverId : Identifiant du pilote, nécessaire pour relier les performances individuelles et les qualifications.
+constructorId : Identifiant de l’équipe, permet de suivre les performances des équipes.
+grid : Position de départ, un facteur clé influençant les résultats finaux de la course.
+positionOrder : Position finale dans la course, c’est la cible principale de prédiction.
+points : Points obtenus par le pilote, reflètent la performance et l’impact sur le classement.
+fastestLapTime : Temps du meilleur tour, indique la performance de pointe en course.
+fastestLapSpeed : Vitesse du meilleur tour, mesure la capacité d’un pilote à performer rapidement.
+
+
+    2. Qualifying.csv
+
+raceId : Permet de relier les résultats de qualification aux courses correspondantes.
+driverId : Identifie les performances de qualification des pilotes spécifiques.
+constructorId : Suivi des équipes en qualifications, essentiel pour analyser les performances.
+position : Position obtenue lors des qualifications, souvent corrélée avec les résultats de la course.
+q1, q2, q3 : Temps des sessions de qualification, importants pour comprendre les performances progressives des pilotes.
+
+
+    3. Races.csv
+
+raceId : Lien central entre les différentes données.
+circuitId : Identifiant du circuit, nécessaire pour lier avec les conditions spécifiques des pistes.
+year, round : Fournissent un contexte temporel et chronologique aux résultats.
+date, time : Utilisés pour synchroniser les événements de course avec les données météorologiques.
+
+
+    4. Driver_Standings.csv
+
+raceId : Lien avec les courses spécifiques.
+driverId : Pour identifier la performance du pilote dans le classement.
+points, position : Indiquent la performance historique et actuelle du pilote, influençant la prédiction.
+
+
+    5. Constructor_Standings.csv
+
+raceId : Relie les standings d’équipe aux courses correspondantes.
+constructorId : Pour analyser les performances des équipes.
+points, position : Mesurent la compétitivité de l’équipe et son impact sur les résultats des courses.
+
+
+    6. Weather.parquet
+
+apply_time_rl : Timestamp utilisé pour aligner les données météo avec les événements de course spécifiques.
+climate_temperature : Température ambiante, affecte la performance des voitures et des pneus.
+climate_pressure : Pression atmosphérique, peut influencer les conditions de piste et la dynamique des véhicules.
+gfs_wind_speed : Vitesse du vent, impacte la maniabilité des voitures et la stratégie des équipes.
+gfs_precipitations : Précipitations, crucial pour les stratégies de pneus et la sécurité en course.
+gfs_total_clouds_cover_high, gfs_total_clouds_cover_low, gfs_total_clouds_cover_middle : Bien que leur impact soit plus indirect, ces variables peuvent influencer la température de la piste et la visibilité, ce qui peut affecter les stratégies de course.

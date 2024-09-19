@@ -1,0 +1,8 @@
+# Ignorer le dossier de l'environnement virtuel
+.venv/
+
+# Ignorer tous les fichiers CSV
+*.csv
+
+# Ignorer tous les fichiers Parquet
+*.parquet
